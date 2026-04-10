@@ -1,6 +1,6 @@
 const game = {
     inventory: [],
-    balance: 999,
+    balance: 100,
     database: [
         { nameitem: "Copper", price: 20, sellable: true, tier: 1 },
         { nameitem: "Aluminium", price: 45, sellable: true, tier: 2 },
