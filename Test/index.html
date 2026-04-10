@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crist Merger</title>
+    <style>
+        body { background: #0f0f0f; color: #eee; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; }
+        .header { padding: 30px; background: #151515; border-bottom: 2px solid #333; }
+        #alert { height: 24px; margin: 10px 0; font-weight: bold; transition: 0.3s; opacity: 0; }
+        #inventory { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+            gap: 15px; padding: 20px; max-width: 1000px; margin: 0 auto;
+        }
+        .item-card { 
+            background: #1e1e1e; border: 2px solid; border-radius: 12px; 
+            padding: 15px; position: relative; transition: 0.2s;
+        }
+        .tier-badge {
+            position: absolute; top: -8px; right: -8px; width: 22px; height: 22px;
+            border-radius: 50%; font-size: 11px; line-height: 22px; color: #000; font-weight: bold;
+        }
+        .btn-merge { background: #4a90e2; color: white; border: none; padding: 5px; width: 100%; border-radius: 4px; margin-bottom: 5px; cursor: pointer; }
+        .btn-sell { background: #333; color: #ccc; border: none; padding: 5px; width: 100%; border-radius: 4px; cursor: pointer; }
+        .btn-sell:disabled { opacity: 0.3; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CRIST MERGER</h1>
+        <p>Wallet: $<span id="balance">0</span></p>
+        <button onclick="game.buyItem()" style="padding: 10px 20px; cursor: pointer;">Buy Crist ($20)</button>
+        <p id="alert"></p>
+    </div>
+    <div id="inventory"></div>
+
+    <script src="HTMLAlert.js"></script>
+    <script src="PKRender.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
