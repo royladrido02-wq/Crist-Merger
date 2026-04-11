@@ -1,8 +1,8 @@
 # Crist Merger 💎
 
-![GitHub License](https://img.shields.io/github/license/Royladrido02-wq/Crist-Merger)
-![GitHub stars](https://img.shields.io/github/stars/Royladrido02-wq/Crist-Merger)
-![GitHub last commit](https://img.shields.io/github/last-commit/Royladrido02-wq/Crist-Merger)
+![GitHub License](https://img.shields.io/github/license/Royladrido02-wq/CMerger)
+![GitHub stars](https://img.shields.io/github/stars/Royladrido02-wq/CMerger)
+![GitHub last commit](https://img.shields.io/github/last-commit/Royladrido02-wq/CMerger)
 
 A modular, JavaScript-based "merge" game where players collect, combine, and sell materials to reach the ultimate Tier 5 crystals.
 
@@ -33,4 +33,4 @@ This project uses a decoupled engine design to separate game logic from visual r
 ## 📝 Installation for Developers
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/Royladrido02-wq/Crist-Merger.git](https://github.com/Royladrido02-wq/Crist-Merger.git)
+   git clone [https://github.com/Royladrido02-wq/CMerger.git](https://github.com/Royladrido02-wq/CMerger.git)
