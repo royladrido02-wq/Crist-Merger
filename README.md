@@ -33,4 +33,4 @@ This project uses a decoupled engine design to separate game logic from visual r
 ## 📝 Installation for Developers
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/Royladrido02-wq/crist-merger.git](https://github.com/Royladrido02-wq/crist-merger.git)
+   git clone [https://github.com/Royladrido02-wq/Crist-Merger.git](https://github.com/Royladrido02-wq/Crist-Merger.git)
