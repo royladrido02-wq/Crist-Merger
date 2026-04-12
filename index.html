@@ -33,6 +33,25 @@
         <button onclick="game.buyItem()" style="padding: 10px 20px; cursor: pointer;">Buy Crist ($20)</button>
         <p id="alert"></p>
     </div>
+    <div class="save-manager">
+    <select id="save-slot">
+        <option value="1">Storage 1</option>
+        <option value="2">Storage 2</option>
+        <option value="3">Storage 3</option>
+        <option value="4">Storage 4</option>
+        <option value="5">Storage 5</option>
+    </select>
+    <button onclick="game.saveGame()" class="btn-save">Save</button>
+    <button onclick="game.loadGame()" class="btn-load">Load</button>
+</div>
+
+<style>
+    .save-manager { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
+    #save-slot { background: #222; color: white; border: 1px solid #444; border-radius: 4px; padding: 5px; }
+    .btn-save { background: #ff9800; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
+    .btn-load { background: #9c27b0; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
+</style>
+
     <div id="inventory"></div>
 
     <script src="HTMLAlert.js"></script>

@@ -13,16 +13,44 @@ const game = {
     ],
 
     init: function() {
-        // This ensures the board is rendered immediately on load
-        this.refresh(); 
-        HTMLAlert.show("System Initialized...");
+        // Automatically try to load Storage 1 on startup
+        this.loadGame(false); 
+        this.refresh();
+        HTMLAlert.show("Ready to Merge!");
     },
 
+    // --- SAVE/LOAD LOGIC ---
+    saveGame: function() {
+        const slot = document.getElementById('save-slot').value;
+        const saveData = {
+            inventory: this.inventory,
+            balance: this.balance
+        };
+        localStorage.setItem(`cristSave_slot_${slot}`, JSON.stringify(saveData));
+        HTMLAlert.show(`Saved to Storage ${slot}!`);
+    },
+
+    loadGame: function(showNotice = true) {
+        const slot = document.getElementById('save-slot').value;
+        const saved = localStorage.getItem(`cristSave_slot_${slot}`);
+        
+        if (saved) {
+            const data = JSON.parse(saved);
+            this.inventory = data.inventory;
+            this.balance = data.balance;
+            this.refresh();
+            if(showNotice) HTMLAlert.show(`Loaded Storage ${slot}`);
+        } else {
+            if(showNotice) HTMLAlert.show(`Storage ${slot} is empty!`, true);
+        }
+    },
+
+    // --- GAMEPLAY LOGIC ---
     buyItem: function() {
         if (this.balance >= 20) {
             this.balance -= 20;
             const t1 = this.database.filter(i => i.tier === 1);
-            const newItem = { ...t1[Math.floor(Math.random() * t1.length)] };
+            const newItem = JSON.parse(JSON.stringify(t1[Math.floor(Math.random() * t1.length)]));
             this.inventory.push(newItem);
             this.refresh();
         } else {
@@ -40,7 +68,7 @@ const game = {
             this.inventory[index].tier++;
             this.inventory[index].price = Math.floor(this.inventory[index].price * 2.2);
             this.inventory.splice(targetIndex, 1);
-            this.refresh(); // Re-render after state change
+            this.refresh();
             HTMLAlert.show(`${source.nameitem} Merged!`);
         } else if (source.tier >= 5) {
             HTMLAlert.show("Max Tier reached!", true);
@@ -54,7 +82,7 @@ const game = {
         if (item.sellable) {
             this.balance += item.price;
             this.inventory.splice(index, 1);
-            this.refresh(); // Re-render after state change
+            this.refresh();
         }
     },
 
@@ -63,5 +91,4 @@ const game = {
     }
 };
 
-// Start the game loop
 window.onload = () => game.init();
