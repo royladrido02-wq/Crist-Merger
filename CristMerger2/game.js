@@ -13,7 +13,8 @@ const game = {
         { nameitem: "Particle", price: 0, sellable: false, tier: 1 },
         { nameitem: "Sodium", price: 250, sellable: true, tier: 4 },
         { nameitem: "Diamond", price: 500, sellable: true, tier: 3 },
-        { nameitem: "Titanium", price: 1200, sellable: true, tier: 5 }
+        { nameitem: "Titanium", price: 1200, sellable: true, tier: 5 },
+        { nameitem: "Crystal", price: 10, sellable: true, tier: 1 }
     ],
 
     init: function() {
